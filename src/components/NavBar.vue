@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav v-if="isLoggedIn">
     <v-toolbar app>
       <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
