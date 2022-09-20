@@ -26,7 +26,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <v-btn href="/sign-in" v-if="!isLoggedIn">Log-In</v-btn>
+      <v-btn @click="signIn" v-if="!isLoggedIn">Log-In</v-btn>
       <v-btn color="error" @click="logout" v-if="isLoggedIn"> Sign Out </v-btn>
     </v-toolbar>
 
@@ -80,7 +80,9 @@ onAuthStateChanged(auth, (user) => {
     isLoggedIn.value = false;
   }
 });
-
+const signIn = () => {
+  router.push("/sign-in");
+};
 const logout = () => {
   signOut(auth)
     .then(() => {
