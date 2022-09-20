@@ -49,6 +49,7 @@ import { ref } from "vue";
 import { onMounted } from "vue";
 import { db } from "@/firebase";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import router from "@/router";
 
 const drawer = ref(false);
 
@@ -84,10 +85,11 @@ onAuthStateChanged(auth, (user) => {
 const logout = () => {
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
+      router.push('/')
     })
     .catch((error) => {
       // An error happened.
     });
+    
 };
 </script>
