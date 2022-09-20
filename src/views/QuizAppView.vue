@@ -150,7 +150,7 @@ export default {
       return squiz;
     },
     reloadPage() {
-      this.$router.go(0);
+      router.push("/")
     },
     handleButtonClick: function (event) {
       /* Find index to identiy question object in data */
