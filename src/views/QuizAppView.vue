@@ -81,10 +81,10 @@ import { getAuth } from "firebase/auth";
 import { doc, query, setDoc, Timestamp } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 import { orderBy } from "firebase/firestore";
-import router from "@/router";
 
 import { ref } from "vue";
 import { db } from "@/firebase";
+import router from '@/router';
 
 const auth = getAuth();
 const user = auth.currentUser;
@@ -118,7 +118,8 @@ export default {
   // Custom methods of the Vue Component
   methods: {
     reloadPage() {
-      router.push("/QuizApp")
+      window.location.reload();
+      router.push("/QuizApp");
     },
     async fetchQuestions() {
       this.loading = true;
