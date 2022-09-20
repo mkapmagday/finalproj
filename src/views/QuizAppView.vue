@@ -118,12 +118,7 @@ export default {
   // Custom methods of the Vue Component
   methods: {
     reloadPage() {
-      this.squiz=false;
-      this.quizCompleted=false;
-      this.index= 0;
-      this.score= 0;
-      this.questionCurrentNumber= 1;
-      console.log("tryagain")
+      this.$router.go(0);
     },
     async fetchQuestions() {
       this.loading = true;
