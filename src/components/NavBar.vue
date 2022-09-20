@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="isLoggedIn">
+  <nav>
     <v-toolbar app>
       <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
@@ -56,7 +56,6 @@ const drawer = ref(false);
 const items = ref([
   { title: "Home", icon: "mdi-home", path: "/" },
   { title: "QuizApp", icon: "mdi-vuetify", path: "/QuizApp" },
-  { title: "AdminCrud", icon: "mdi-admin", path: "/AdminCrud" },
 
 ]);
 
@@ -85,7 +84,7 @@ onAuthStateChanged(auth, (user) => {
 const logout = () => {
   signOut(auth)
     .then(() => {
-      router.push('/')
+      router.push('/sign-in')
     })
     .catch((error) => {
       // An error happened.
@@ -93,3 +92,14 @@ const logout = () => {
     
 };
 </script>
+<style scoped>
+.v-toolbar__content, .v-toolbar__extension, .v-toolbar__content {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    position: relative;
+    transition: inherit;
+    width: 100%;
+    background-color: tan;
+}
+</style>
