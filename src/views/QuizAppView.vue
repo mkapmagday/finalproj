@@ -117,9 +117,6 @@ export default {
   },
   // Custom methods of the Vue Component
   methods: {
-    reloadPage() {
-      this.$router.go(0);
-    },
     async fetchQuestions() {
       this.loading = true;
       let response = await fetch("https://opentdb.com/api.php?amount=5");
@@ -151,6 +148,9 @@ export default {
     startQuiz() {
       this.squiz = true;
       return squiz;
+    },
+    reloadPage() {
+      this.$router.go(0);
     },
     handleButtonClick: function (event) {
       /* Find index to identiy question object in data */
